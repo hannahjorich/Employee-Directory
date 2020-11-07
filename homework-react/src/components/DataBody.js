@@ -4,7 +4,8 @@ import React from 'react';
 const DataBody = ({ users }) => {
     return (
         <tbody>
-            {users.map(({name, login, picture, email, phone}) => {
+            {users[0] !== undefined && users[0].name !== undefined ? (
+            users.map(({name, login, picture, email, phone}) => {
                 return(
                     <tr key ={login.uuid}>
                         <td>
@@ -21,10 +22,15 @@ const DataBody = ({ users }) => {
                            <a href={"mailto:" + email}>{email}</a>
                         </td>
                     </tr>
-
                 )
-            })}
+                }) 
+            ) : (
+                <>
+                </>
+            )}    
+
         </tbody>
+    
     )
 }
 

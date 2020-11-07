@@ -23,7 +23,6 @@ class DataArea extends Component {
   render() {
     return (
       <div>
-        <h1>Results in Console</h1>
         <DataTable 
             users={this.state.users}
             headings={this.headings}
