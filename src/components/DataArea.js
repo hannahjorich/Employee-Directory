@@ -1,9 +1,11 @@
 import React, { Component } from "react";
 import API from "../utils/API";
 import DataTable from "./DataTable";
+import Header from "./Header"
 
 class DataArea extends Component {
   state = { users: [{}] };
+  
   
   componentDidMount() {
     API.getUsers().then((results) => {
@@ -20,9 +22,15 @@ class DataArea extends Component {
       {name: "Email", width: "10%"}, 
   ]
 
+  handleSearchChange = (event) => {
+    console.log(event.target.value)
+  }
+
   render() {
     return (
       <div>
+
+        <Header handleSearchChange={this.handleSearchChange}/>
         <DataTable 
             users={this.state.users}
             headings={this.headings}
