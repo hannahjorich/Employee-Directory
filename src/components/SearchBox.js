@@ -1,28 +1,21 @@
-import React from "react";
+import React, { useContext } from "react";
+import DataAreaContext from "../utils/DataAreaContext";
 
-function SearchBox({search, handleSearchChange}) {
-  return (
-    <form className="search">
-    <div className="form-group row">
-      <div className="col-10">
-          <input
-          onChange={(event) => handleSearchChange(event)}
-          name="employee"
-          list="employees"
-          type="text"
-          className="form-control"
-          placeholder="Type in a name to search"
-          id="employee"
-          />
-      </div>
-      <div className="col-2">
-          <button type="submit" onClick={search} className="btn btn-primary">
-              Search
-          </button>
-      </div>
-    </div>
-  </form>
-  );
+const SearchName = () => {
+    const context = useContext(DataAreaContext);
+
+    return (
+        <div className="searchbox">
+            <form className="form-inline">
+                <input
+                    className="form-control form-control-sm"
+                    type="search"
+                    placeholder="Name"
+                    aria-label="Search"
+                    onChange={e => context.handleSearchChange(e)}/>
+                <button className="btn btn-primary" type="submit">Search</button>
+            </form>
+        </div>
+    );
 }
-
-export default SearchBox;
+export default SearchName;

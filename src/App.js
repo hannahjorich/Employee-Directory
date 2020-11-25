@@ -1,13 +1,15 @@
 import React from 'react';
-import DataArea from './components/DataArea';
+import Wrapper from './components/Wrapper';
+import Header from './components/Header';
+import Main from './components/Main';
 
 
 function App () {
     return(
-        <div>
-            <DataArea />
-        </div>
-
+        <Wrapper>
+        <Header />
+        <Main />
+      </Wrapper>
     )
 }
 
