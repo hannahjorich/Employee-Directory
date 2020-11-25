@@ -21,7 +21,8 @@ The following image demonstrates the application functionality:
 ## Links
 
 Repo: https://github.com/hannahjorich/Employee-Directory
-Deployed: 
+
+Deployed: https://hannahjorich.github.io/Employee-Directory/
 
 ## Resources 
 
